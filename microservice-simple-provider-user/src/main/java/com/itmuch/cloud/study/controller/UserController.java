@@ -16,6 +16,11 @@ public class UserController {
   @GetMapping("/{id}")
   public User findById(@PathVariable Long id) {
     User findOne = this.userRepository.findOne(id);
+    if (findOne == null){
+      User te = new User();
+      te.setName("未查找到该用户,请更换id");
+      return te;
+    }
     return findOne;
   }
 }
