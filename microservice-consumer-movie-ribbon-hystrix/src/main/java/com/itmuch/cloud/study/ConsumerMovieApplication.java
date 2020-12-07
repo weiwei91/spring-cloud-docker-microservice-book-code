@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 
 @EnableDiscoveryClient
 @SpringBootApplication
-@EnableCircuitBreaker
+@EnableCircuitBreaker//或者@EnableHystrix
 public class ConsumerMovieApplication {
   @Bean
   @LoadBalanced
